@@ -9,7 +9,7 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
 	export TERM='xterm-256color';
 fi;
 
-virtualenv_info(){
+function virtualenv_info() {
     # Get Virtual Env
     if [[ -n "$VIRTUAL_ENV" ]]; then
         # Strip out the path and just leave the env name
@@ -21,8 +21,13 @@ virtualenv_info(){
     [[ -n "$venv" ]] && echo "${1}($venv) "
 }
 
+function parse_hg_branch {
+  if [ "$(hg root 2> /dev/null)" ]; then
+    printf "[$(hg branch)]"
+  fi
+}
 
-prompt_git() {
+function prompt_git() {
 	local s='';
 	local branchName='';
 

@@ -1,0 +1,11 @@
+# Set architecture flags
+export ARCHFLAGS="-arch x86_64"
+
+# Related to virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Development
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+source /usr/local/bin/virtualenvwrapper.sh
+
+# PIP should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
