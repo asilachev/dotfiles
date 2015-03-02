@@ -1,10 +1,14 @@
 [alias]
+	# Simple shortcuts
+	co = checkout
+	br = branch
+	dt = difftool
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
 	# View the current working tree status using the short format
-	s = status -s
+	st = status -s
 
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -126,6 +130,25 @@
 	# Detect copies as well as renames
 	renames = copies
 
+	tool = Kaleidoscope
+
+[difftool]
+
+	prompt = false	
+
+[difftool "Kaleidoscope"]
+
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[github]
+
+	user = asilachev
+	token = de2574422784e9e364655d9039ae43ad
+
+[ghi]
+
+	token = 7eb262542ef59ed674c5e59fb9578ffeb6db1832
+
 [help]
 
 	# Automatically correct and execute mistyped commands
@@ -135,6 +158,17 @@
 
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+
+	tool = Kaleidoscope
+
+[mergetool "Kaleidoscope"]
+	
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+
+[mergetool]
+
+	prompt = false
 
 [push]
 
@@ -164,3 +198,6 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+[user]
+	name = Alexander Silachev
+	email = alexander@silachev.com
