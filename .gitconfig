@@ -140,15 +140,6 @@
 
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 
-[github]
-
-	user = asilachev
-	token = de2574422784e9e364655d9039ae43ad
-
-[ghi]
-
-	token = 7eb262542ef59ed674c5e59fb9578ffeb6db1832
-
 [help]
 
 	# Automatically correct and execute mistyped commands
