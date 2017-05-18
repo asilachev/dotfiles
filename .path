@@ -6,3 +6,6 @@ export PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:${PATH}
 
 # NPM
 export PATH=/usr/local/share/npm/bin:${PATH}
+
+# Scripts
+export PATH=/Users/asilachev/Scripts:${PATH}

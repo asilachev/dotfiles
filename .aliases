@@ -144,8 +144,16 @@ alias reload="exec $SHELL -l"
 alias use-iojs="brew unlink node && brew link --force iojs"
 alias use-node="brew unlink iojs && brew link --force node"
 
-# SublimeText
-alias s='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-
 # Forgotten sudo
 alias fff='sudo $(history -p \!\!)'
+
+# Remove *.pyc files
+alias no_pyc='find . -name "*.pyc" -exec rm -rf {} \;'
+
+# Django related
+alias +="./manage.py shell_plus --bpython"
+alias mm="./manage.py runserver"
+alias gg="grunt rebuild; grunt watch"
+
+# Docker
+alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'

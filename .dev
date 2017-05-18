@@ -9,3 +9,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # PIP should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true
+
+# NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
