@@ -151,9 +151,13 @@ alias fff='sudo $(history -p \!\!)'
 alias no_pyc='find . -name "*.pyc" -exec rm -rf {} \;'
 
 # Django related
-alias +="./manage.py shell_plus --bpython"
+alias +="./manage.py shell_plus --ipython"
 alias mm="./manage.py runserver"
+alias mm+="./manage.py runserver_plus"
 alias gg="grunt rebuild; grunt watch"
 
 # Docker
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
+alias docker_restart='docker restart $(docker ps -a -q)'
+alias docker_start='docker start $(docker ps -a -q)'
+alias docker_stop='docker stop $(docker ps -a -q)'
