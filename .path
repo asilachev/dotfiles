@@ -2,7 +2,7 @@
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # Homebrew
-export PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:${PATH}
+export PATH=/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/local/sbin:${PATH}
 
 # NPM
 export PATH=/usr/local/share/npm/bin:${PATH}
