@@ -161,3 +161,6 @@ alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}
 alias docker_restart='docker restart $(docker ps -a -q)'
 alias docker_start='docker start $(docker ps -a -q)'
 alias docker_stop='docker stop $(docker ps -a -q)'
+
+# VS Code
+alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
