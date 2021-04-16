@@ -38,6 +38,7 @@ bindkey '^[[3~' delete-char
 bindkey '^?' backward-delete-char
 
 export DYLD_LIBRARY_PATH=/usr/local/Cellar/openssl/1.0.2t/lib
-
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
