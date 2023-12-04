@@ -1,17 +1,18 @@
 # History
-HISTSIZE=10000 			# Lines of history to keep in memory for current session
-HISTFILESIZE=10000 		# Number of commands to save in the file
-SAVEHIST=10000 			# Number of history entries to save to disk
+HISTSIZE=1000000000 		# Lines of history to keep in memory for current session
+HISTFILESIZE=1000000000 	# Number of commands to save in the file
+SAVEHIST=1000000000 		# Number of history entries to save to disk
 HISTFILE=~/.zsh_history 	# Where to save history to disk
-HISTDUP=erase 			# Erase duplicates in the history file
+export HISTTIMEFORMAT="[%F %T] "
+setopt EXTENDED_HISTORY		# Add timestamps to history
 
 # Options - `man zshoptions`
 setopt append_history 		# Append history to the history file (no overwriting)
 setopt complete_aliases		# Do not expand aliases _before_ completion has finished
 setopt hist_ignore_all_dups 	# Ignore duplicates
 setopt hist_reduce_blanks
-setopt share_history 		# Share history across terminals
-setopt inc_append_history 	# Immediately append to the history file, not just when a term is killed
+#setopt share_history 		# Share history across terminals
+#setopt inc_append_history 	# Immediately append to the history file, not just when a term is killed
 setopt extended_glob 		# Use extended globbing syntax
 setopt auto_cd 			# Auto change to a dir without typing cd
 
@@ -24,7 +25,6 @@ setopt NO_LIST_BEEP
 setopt LOCAL_OPTIONS 		# Allow functions to have local options
 setopt LOCAL_TRAPS 		# Allow functions to have local traps
 setopt HIST_VERIFY
-setopt EXTENDED_HISTORY 	# Add timestamps to history
 setopt PROMPT_SUBST
 setopt CORRECT
 setopt COMPLETE_IN_WORD
@@ -38,7 +38,12 @@ bindkey '^[[3~' delete-char
 bindkey '^?' backward-delete-char
 
 export DYLD_LIBRARY_PATH=/usr/local/Cellar/openssl/1.0.2t/lib
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+zstyle :prompt:pure:git:stash show yes
+
+# Git branch autocomplete (https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh)
+autoload -Uz compinit && compinit
+
+export PATH=/opt/homebrew/bin:~/.docker/bin:$PATH
